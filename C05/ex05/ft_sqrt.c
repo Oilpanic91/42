@@ -6,7 +6,7 @@
 /*   By: rcavalie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 10:37:28 by rcavalie          #+#    #+#             */
-/*   Updated: 2021/02/23 11:10:59 by rcavalie         ###   ########.fr       */
+/*   Updated: 2021/02/24 16:38:23 by rcavalie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@ int	ft_sqrt(int nb)
 	int a;
 
 	a = 0;
-	if (nb < 0 || nb == 0)
+	if (nb < 0 && nb == 0)
 		return (0);
-	while (a * a < nb)
+	while (a * a < nb && (a * a) >= 0)
 		a++;
 	if (a * a == nb)
 		return (a);

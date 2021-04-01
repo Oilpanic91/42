@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   strncmp.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcavalie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/24 15:42:00 by rcavalie          #+#    #+#             */
-/*   Updated: 2021/04/01 11:38:11 by rcavalie         ###   ########.fr       */
+/*   Created: 2021/04/01 11:02:29 by rcavalie          #+#    #+#             */
+/*   Updated: 2021/04/01 11:31:13 by rcavalie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
+#include <string.h>
+#include <stdio.h>
 
-int	ft_isdigit(int c)
+int	strncmp(const char *s1, const char *s2, size_t n)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
+	:
+
+

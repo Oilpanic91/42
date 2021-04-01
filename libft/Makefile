@@ -6,7 +6,7 @@
 #    By: rcavalie <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/24 10:40:22 by rcavalie          #+#    #+#              #
-#    Updated: 2021/04/01 11:32:32 by rcavalie         ###   ########.fr        #
+#    Updated: 2021/04/01 18:02:53 by rcavalie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,13 @@ SRC = ft_strlen.c\
 	  ft_isprint.c\
 	  ft_toupper.c\
 	  ft_tolower.c\
- 
+	  ft_strncmp.c\
+	  ft_atoi.c\
+	  ft_strchr.c\
+	  ft_strrchr.c\
+	  ft_strnstr.c\
+	  ft_strlcpy.c\
+
 OBJ = $(SRC:.c=.o)
 NAME = libft.a
 

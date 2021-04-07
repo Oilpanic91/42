@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcavalie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/01 14:43:35 by rcavalie          #+#    #+#             */
-/*   Updated: 2021/04/02 18:00:23 by rcavalie         ###   ########.fr       */
+/*   Created: 2021/04/02 13:32:07 by rcavalie          #+#    #+#             */
+/*   Updated: 2021/04/02 14:03:30 by rcavalie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	int	i;
+	size_t				i;
+	unsigned char		*dstcast;
+	unsigned char		*srccast;
 
+	if (!src && !dst)
+		return (NULL);
+	dstcast = (unsigned char *)dst;
+	srccast = (unsigned char *)src;
 	i = 0;
-	while (s[i])
-		i++;
-	while (i >= 0)
+	while (i < n)
 	{
-		if (s[i] == (unsigned char)c)
-			return ((char *)s + i);
-		i--;
+		dstcast[i] = srccast[i];
+		i++;
 	}
-	return ((char *) NULL);
+	return (dstcast);
 }

@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcavalie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/01 14:43:35 by rcavalie          #+#    #+#             */
-/*   Updated: 2021/04/02 18:00:23 by rcavalie         ###   ########.fr       */
+/*   Created: 2021/04/02 15:47:46 by rcavalie          #+#    #+#             */
+/*   Updated: 2021/04/02 17:44:47 by rcavalie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	int	i;
+	size_t			i;
+	unsigned char	*castd;
+	unsigned char	*casts;
 
-	i = 0;
-	while (s[i])
-		i++;
-	while (i >= 0)
+	castd = (unsigned char *)dst;
+	casts = (unsigned char *)src;
+	i = -1;
+	if (!src && !dst)
+		return (NULL);
+	if (dst > src)
 	{
-		if (s[i] == (unsigned char)c)
-			return ((char *)s + i);
-		i--;
+		while (i + 1 < len)
+		{
+			castd[len - 1] = casts[len - 1];
+			len--;
+		}
 	}
-	return ((char *) NULL);
+	else
+	{
+		while (len > ++i)
+			castd[i] = casts[i];
+	}
+	return (dst);
 }

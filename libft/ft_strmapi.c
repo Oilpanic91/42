@@ -1,20 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcavalie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/09 11:13:42 by rcavalie          #+#    #+#             */
-/*   Updated: 2021/04/09 14:02:03 by rcavalie         ###   ########.fr       */
+/*   Created: 2021/04/09 13:35:55 by rcavalie          #+#    #+#             */
+/*   Updated: 2021/04/09 14:16:00 by rcavalie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (!s)
-		return ;
-	write(fd, s, ft_strlen(s));
-}
+

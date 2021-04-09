@@ -6,7 +6,7 @@
 #    By: rcavalie <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/24 10:40:22 by rcavalie          #+#    #+#              #
-#    Updated: 2021/04/07 17:01:45 by rcavalie         ###   ########.fr        #
+#    Updated: 2021/04/09 11:09:37 by rcavalie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,12 @@ SRC = ft_strlen.c\
 	  ft_memmove.c\
 	  ft_memcmp.c\
 	  ft_strlcat.c\
+	  ft_strdup.c\
+	  ft_calloc.c\
+	  ft_putchar_fd.c\
+	  ft_putnbr_fd.c\
+	  ft_putstr_fd.c\
+	  ft_putendl_fd.c\
 	  
 OBJ = $(SRC:.c=.o)
 NAME = libft.a

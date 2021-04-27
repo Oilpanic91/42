@@ -6,7 +6,7 @@
 /*   By: rcavalie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 17:53:17 by rcavalie          #+#    #+#             */
-/*   Updated: 2021/04/26 14:30:20 by rcavalie         ###   ########.fr       */
+/*   Updated: 2021/04/27 13:41:11 by rcavalie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_itoa(int n);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
-char    *ft_strmapi(const char *s, char(*f)(unsigned int, char));
+char	*ft_strmapi(const char *s, char(*f)(unsigned int, char));
 char	**ft_split(char const *s, char c);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
@@ -61,6 +61,10 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_lstadd_front(t_list **alst, t_list *new);
 void	ft_lstadd_back(t_list **alst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstmap(t_list *lst, void * (*f)(void *), void (*del)(void *));
 #endif

@@ -6,7 +6,7 @@
 #    By: rcavalie <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/24 10:40:22 by rcavalie          #+#    #+#              #
-#    Updated: 2021/04/26 14:30:30 by rcavalie         ###   ########.fr        #
+#    Updated: 2021/04/27 12:05:31 by rcavalie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,11 @@ BONUS_SRC = ft_lstnew.c\
 			ft_lstsize.c\
 			ft_lstlast.c\
 			ft_lstadd_back.c\
+			ft_lstdelone.c\
+			ft_lstclear.c\
+			ft_lstiter.c\
+			ft_lstmap.c\
+
 
 OBJ = $(SRC:.c=.o)
 BONUS_OBJ = $(BONUS_SRC:.c=.o)

@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcavalie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/26 14:33:15 by rcavalie          #+#    #+#             */
-/*   Updated: 2021/04/27 11:26:28 by rcavalie         ###   ########.fr       */
+/*   Created: 2021/04/27 12:01:40 by rcavalie          #+#    #+#             */
+/*   Updated: 2021/04/27 13:39:18 by rcavalie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void * (*f)(void *), void (*del)(void *))
 {
-	if (lst)
+	t_list	*new;
+	t_list	*elt;
+
+	new = NULL;
+	while (lst)
 	{
-		del(lst->content);
-		free(lst);
+		elt = ft_lstnew(f(lst->content));
+		if (!elt)
+		{
+			ft_lstclear(&new, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new, elt);
+		lst = lst->next;
 	}
+	return (new);
 }

@@ -6,7 +6,7 @@
 /*   By: rcavalie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 14:13:50 by rcavalie          #+#    #+#             */
-/*   Updated: 2021/04/26 14:33:05 by rcavalie         ###   ########.fr       */
+/*   Updated: 2021/04/27 11:31:31 by rcavalie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	t_list *elt;
+	t_list	*elt;
 
 	if (!alst)
 		return ;

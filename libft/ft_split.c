@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static char	**error(char **tab)
+void error(char **tab)
 {
 	unsigned int	i;
 
@@ -23,7 +23,6 @@ static char	**error(char **tab)
 		i++;
 	}
 	free(tab);
-	return (NULL);
 }
 
 static unsigned int	ft_strings(char const *s, char c)
@@ -71,22 +70,12 @@ static void	ft_next_str(char **next_str, unsigned int *next_str_len, char c)
 	}
 }
 
-char	**ft_split(char const *s, char c)
+void handle(unsigned int nb, char **tab, char *next_str, char c)
 {
-	char			**tab;
-	char			*next_str;
-	unsigned int	next_str_len;
-	unsigned int	nb;
 	unsigned int	i;
+	unsigned int	next_str_len;
 
-	if (!s)
-		return (NULL);
-	nb = ft_strings(s, c);
-	tab = malloc(sizeof(char *) * (nb + 1));
-	if (!tab)
-		return (NULL);
 	i = 0;
-	next_str = (char *)s;
 	next_str_len = 0;
 	while (i < nb)
 	{
@@ -98,10 +87,26 @@ char	**ft_split(char const *s, char c)
 		i++;
 	}
 	tab[i] = NULL;
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char			**tab;
+	char			*next_str;
+	unsigned int	nb;
+
+	if (!s)
+		return (NULL);
+	nb = ft_strings(s, c);
+	tab = malloc(sizeof(char *) * (nb + 1));
+	if (!tab)
+		return (NULL);
+	next_str = (char *)s;
+	handle(nb, tab, next_str, c);
 	return (tab);
 }
 
-/*int	main(void)
+int	main(void)
 {
 	char			**tab;
 	unsigned int	i;
@@ -116,4 +121,4 @@ char	**ft_split(char const *s, char c)
 		i++;
 	}
 }
-*/
+
